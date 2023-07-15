@@ -1,0 +1,12 @@
+#https://docs.moodle.org/402/en/Git_for_Administrators
+You can find the official Moodle git repository at git://git.moodle.org/moodle.git (with an official clone at git://github.com/moodle/moodle.git). To initialize your local checkout, use
+
+$ cd /path/to/your/webroot
+$ git clone git://git.moodle.org/moodle.git                       (1)
+$ cd moodle
+$ git branch -a                                                   (2)
+$ git branch --track MOODLE_402_STABLE origin/MOODLE_402_STABLE     (3)
+$ git checkout MOODLE_402_STABLE                                   (4)
+The command (1) initializes the new local repository as a clone of the 'upstream' (i.e. the remote server based) moodle.git repository. The upstream repository is called 'origin' by default. It creates a new directory named moodle, where it downloads all the files. This operation can take a while as it is actually getting the entire history of all Moodle versions
+The command (2) lists all available branches.
+Use the command (3) to create a new local branch called MOODLE_402_STABLE and set it to track the remote branch MOODLE_402_STABLE from the upstream repository.
